@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pilns apskats{% endblock %}
+
+{% block main_block_head_content %}Pilns apskats{% endblock %}
+
+{% block main_block_body %}
+    <div class="row">
+        <div class="col-12">
+            <hr>
+            <h6>Jauns fails</h6>
+        </div>
+        <div class="col-12">
+            {% include 'receipt/form_new.html.twig' %}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <h6>Čeka attēls</h6>
+            <hr>
+            <div><img src="{{ path('app_receipt_uploaded', {'name': filename}) }}" class="img-fluid" alt="uploaded_receipt_image"></div>
+        </div>
+        <div class="col-4">
+            <h6>Atpazīšanas rezultāts</h6>
+            <hr>
+            {{ scanned_data|nl2br }}
+        </div>
+        <div class="col-4">
+            <h6>Izgūtie dati</h6>
+            <hr>
+            {% for match in matches %}
+                <b>{{ match.label }}</b>: {{ match.value }}
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Receipts list{% endblock %}
+
+{% block main_block_head_content %}Receipts list{% endblock %}
+
+{% block main_block_body %}
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Nosaukums</th>
+            <th scope="col">Izmērs</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in list %}
+            <tr>
+                <td><a href="{{ path('app_receipt_overview', {'name': item.name}) }}">{{ item.name }}</a></td>
+                <td>{{ (item.size/(1024*1024))|round(2, 'floor') }} MB</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rakstzīmju atpazīšanas rezultāts{% endblock %}
+
+{% block main_block_head %}
+    <h6 class="text-center">Rakstzīmju atpazīšanas rezultāts</h6>
+{% endblock %}
+
+{% block main_block_body %}
+    <div class="row text-center">
+        <a href="{{ path('reciept_extracted', {'fileName': file_name}) }}" class="btn-secondary btn btn-sm m-auto">Izgūt datus</a>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-5">
+        {{ scanned_data|nl2br }}
+        </div>
+        <div class="col">
+        </div>
+    </div>
+{% endblock %}

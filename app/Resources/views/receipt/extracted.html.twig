@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Izgūtie dati{% endblock %}
+
+{% block main_block_head_content %}Izgūtie dati{% endblock %}
+
+{% block main_block_body %}
+
+    <pre>{{ data|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+
+{% endblock %}
