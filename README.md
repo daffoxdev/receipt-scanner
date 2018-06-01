@@ -6,3 +6,15 @@ Lai veiktu izstrādāto lietojumprogrammas prototipu uzstādīšanu ir nepiecie�
 php composer.phar install
 ```
 Pēc komandas izpildīšanas var sākt izmantot projektu.
+
+
+Tīmekļa ceļš līdz čeku apskata lapu ir:
+```
+http://.../receipt/overview/{name}
+```
+, kur {name} ir čeka faila nosaukums.
+
+Lai augšupieladēt čeku:
+```
+http://.../receipt/new
+```
